@@ -6,7 +6,7 @@ export function initializeKeycloak(keycloak: KeycloakService): () => Promise<boo
             config: {
                 url: 'https://keycloakserver3.azurewebsites.net/auth',
                 realm: 'Testing',
-                clientId: 'nodejs-microservice',
+                clientId: 'Demo',
             },
             initOptions: {
                 checkLoginIframe: true,
