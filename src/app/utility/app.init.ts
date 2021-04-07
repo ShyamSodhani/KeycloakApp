@@ -4,9 +4,9 @@ export function initializeKeycloak(keycloak: KeycloakService): () => Promise<boo
     return () =>
         keycloak.init({
             config: {
-                url: 'http://localhost:8080/auth',
-                realm: 'Demo-Realm',
-                clientId: 'demo-client',
+                url: 'https://keycloakserver3.azurewebsites.net/auth',
+                realm: 'Testing',
+                clientId: 'nodejs-microservice',
             },
             initOptions: {
                 checkLoginIframe: true,
