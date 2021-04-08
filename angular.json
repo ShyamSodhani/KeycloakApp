@@ -68,7 +68,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "KeycloakApp:build:production"
+              "browserTarget": "KeycloakApp:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             }
           }
         },

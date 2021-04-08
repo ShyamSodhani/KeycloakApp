@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { KeycloakService } from 'keycloak-angular';
 import jwt_decode from 'jwt-decode';
-import { DataService } from "../../../data.service"
+import { DataService } from "../../../data.service";
+import xml2js from 'xml2js';  
 
 @Component({
   selector: 'app-edit-profile',
@@ -28,10 +29,10 @@ export class EditProfileComponent implements OnInit {
   ngOnInit(): void {
     this.initializeUserOptions();
 
-    this.dataService.sendGetRequest().subscribe((data: any[])=>{
-      console.log(data);
-      // this.products = data;
-    }) 
+    // this.dataService.sendGetRequest().subscribe((data: any[])=>{
+    //   console.log(data);
+    //   // this.products = data;
+    // }) 
   }
 
 
@@ -102,11 +103,31 @@ export class EditProfileComponent implements OnInit {
   }
 
   logout(): void {
-    this.keycloakService.logout('http://localhost:4200');
+    this.keycloakService.logout('https://keycloakserver3.azurewebsites.net');
   }
 
-  test(){
-    console.log("testing");
+
+  hello(){
+    this.dataService.sendGetRequest().subscribe((data)=>{
+      console.log(typeof data);
+      console.log(data);
+    })
   }
+
+  userReq(){
+    this.dataService.userRequest().subscribe((data)=>{
+      console.log(typeof data);
+      console.log(data);
+    })
+  }
+
+  adminReq(){
+    this.dataService.adminRequest().subscribe((data)=>{
+      console.log(typeof data);
+      console.log(data);
+    })
+  }
+
+
 
 }
