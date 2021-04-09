@@ -4,7 +4,7 @@ export function initializeKeycloak(keycloak: KeycloakService): () => Promise<boo
     return () =>
         keycloak.init({
             config: {
-                url: 'https://keycloakserver3.azurewebsites.net/auth',
+                url: 'http://localhost:8080/auth',
                 realm: 'Testing',
                 clientId: 'Demo',
             },
@@ -12,6 +12,7 @@ export function initializeKeycloak(keycloak: KeycloakService): () => Promise<boo
                 checkLoginIframe: true,
                 checkLoginIframeInterval: 25
             },
-            loadUserProfileAtStartUp: true
+            loadUserProfileAtStartUp: true,
+            // enable-cors: true,
         });
 }

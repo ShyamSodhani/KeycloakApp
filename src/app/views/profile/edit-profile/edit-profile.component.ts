@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { KeycloakService } from 'keycloak-angular';
 import jwt_decode from 'jwt-decode';
 import { DataService } from "../../../data.service";
-import xml2js from 'xml2js';  
+// import xml2js from 'xml2js';  
 
 @Component({
   selector: 'app-edit-profile',
@@ -103,7 +103,7 @@ export class EditProfileComponent implements OnInit {
   }
 
   logout(): void {
-    this.keycloakService.logout('https://keycloakserver3.azurewebsites.net');
+    this.keycloakService.logout('http://localhost:4200/welcome/home');
   }
 
 
