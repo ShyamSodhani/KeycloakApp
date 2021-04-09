@@ -17,4 +17,12 @@ export class WelcomeComponent implements OnInit {
     this.router.navigateByUrl('/profile');
   }
 
+  query(){
+    this.router.navigateByUrl('/query');
+  }
+
+  training(){
+    this.router.navigateByUrl('/training');
+  }
+
 }
